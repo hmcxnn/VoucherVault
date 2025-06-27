@@ -42,7 +42,7 @@ perform_migrations() {
         echo "[TASK] Creating periodic tasks for expiry notifications."
         python manage.py create_default_periodic_tasks
         echo "-------------------------------------------------"
-        admin_password=$(generate_random_string)
+        admin_password="admin"
         echo "[TASK] Creating superuser account"
         echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '$admin_password')" | python manage.py shell
         echo "[>] username: admin"
